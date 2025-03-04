@@ -1,14 +1,14 @@
 package co.edu.uniquindio.SistemaDeGestionEmpleados.Model;
 
-public class Empleado {
+public class Empleado  {
     private String nombre;
     private String IdEmpleado;
-    private Departamento departamento;
+    private String departamento;
 
     public Empleado(){
 
     }
-    public Empleado(String nombre, String idEmpleado, Departamento departamento) {
+    public Empleado(String nombre, String idEmpleado, String departamento) {
         this.nombre = nombre;
         this.IdEmpleado = idEmpleado;
         this.departamento = departamento;
@@ -17,7 +17,16 @@ public class Empleado {
     public void setNombre(String nombre) {this.nombre = nombre;}
     public String getIdEmpleado() {return IdEmpleado;}
     public void setIdEmpleado(String idEmpleado) {IdEmpleado = idEmpleado;}
-    public Departamento getDepartamento() {return departamento;}
-    public void setDepartamento(Departamento departamento) {this.departamento = departamento;}
+    public String getDepartamento() {return departamento;}
+    public void setDepartamento(String departamento) {this.departamento = departamento;}
+
+    @Override
+    public String toString() {
+        return "Empleado" +
+                "nombre='" + nombre + '\'' +
+                ", IdEmpleado='" + IdEmpleado + '\'' +
+                ", departamento=" + departamento ;
+    }
+
 
 }
