@@ -15,9 +15,7 @@ public class Tecnico extends Empleado implements Contribucion {
         super(nombre, idEmpleado, departamento);
     }
 
-    public String getNombre() {return super.getNombre();}
-    public String getIdEmpleado() {return super.getIdEmpleado();}
-    public String getDepartamento() {return super.getDepartamento();}
+
 
     @Override
     public String toString() {
