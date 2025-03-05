@@ -1,24 +1,41 @@
 package co.edu.uniquindio.SistemaDeGestionEmpleados;
 
 import co.edu.uniquindio.SistemaDeGestionEmpleados.Factory.ModelFactory;
+import co.edu.uniquindio.SistemaDeGestionEmpleados.Model.SistemaGestion;
 
 import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
         ModelFactory modelFactory =ModelFactory.getInstancia();
+        SistemaGestion sistemaGestion= modelFactory.getSistemaGestion();
 
-        String menuPrincipal = "Menu principal \n" + "Ingrese la opcion correspondiente: \n" + "1. Añadir Empleado. \n"
-                + "2. Imprimir Empleado. \n" + "3. Eliminar Empleado. \n" + "4. Actualizar Empleado. \n" +
-                "5. Crear Departamento. \n" + "6. Imprimir Departamento. \n" + "7. Eliminar Departamento. \n" +
-                "8. Actualizar Departamento. \n" + "9. Crear Proyecto. \n" + "10. Imprimir Proyecto. \n" +
-                "11. Eliminar Proyecto. \n" + "12. Actualizar Proyecto. \n" +  "13. Asignar Empleados. \n" +
-                "14. Añadir Contibucion a proyectos. \n" +"15. Salir";
+        String menuPrincipal = """
+                Menu principal\s
+                Ingrese la opcion correspondiente:\s
+                1. Añadir Empleado.\s
+                2. Imprimir Empleado.\s
+                3. Eliminar Empleado.\s
+                4. Actualizar Empleado.\s
+                5. Crear Departamento.\s
+                6. Imprimir Departamento.\s
+                7. Eliminar Departamento.\s
+                8. Actualizar Departamento.\s
+                9. Crear Proyecto.\s
+                10. Imprimir Proyecto.\s
+                11. Eliminar Proyecto.\s
+                12. Actualizar Proyecto.\s
+                13. Asignar Empleados.\s
+                14. Añadir Contibucion a proyectos.\s
+                15. Empleados Por Proyecto.\s
+                16. lista De partamentos En Proyecto.\s
+                17. Empleados Por Departamento.\s
+                18. Salir""";
         int opcionSeleccionada = 0;
         do {
             opcionSeleccionada = Integer.parseInt(JOptionPane.showInputDialog(null, menuPrincipal));
             opcionMenu(opcionSeleccionada, modelFactory);
-        } while (opcionSeleccionada != 15);
+        } while (opcionSeleccionada != 18);
     }
     private static void opcionMenu(int opcionSeleccionada, ModelFactory modelFactory) {
         switch (opcionSeleccionada) {
@@ -63,6 +80,15 @@ public class Main {
                 break;
             case 14:
                 contribucionAProyectos(modelFactory);
+                break;
+            case 15:
+                EmpleadosPorProyecto(modelFactory);
+                break;
+            case 16:
+                listaDepartamentosEnProyecto(modelFactory);
+                break;
+            case 17:
+                EmpleadosPorDepartamento(modelFactory);
                 break;
             default:
                 break;
@@ -158,6 +184,24 @@ public class Main {
     private static void contribucionAProyectos(ModelFactory modelFactory){
         String idEmpleado= JOptionPane.showInputDialog("Ingrese el Id de empleado");
         String resultado= modelFactory.contribucionAProyectos(idEmpleado);
+        JOptionPane.showInputDialog(resultado);
+    }
+
+    private static void EmpleadosPorProyecto(ModelFactory modelFactory){
+        String codigo= JOptionPane.showInputDialog("Ingrese el codigo del proyecto");
+        String resultado= modelFactory.EmpleadosPorProyecto(codigo);
+        JOptionPane.showInputDialog(resultado);
+    }
+
+    private static void listaDepartamentosEnProyecto(ModelFactory modelFactory){
+        String codigo= JOptionPane.showInputDialog("Ingrese el codigo del proyecto");
+        String resultado= modelFactory.listaDepartamentosEnProyecto(codigo);
+        JOptionPane.showInputDialog(resultado);
+    }
+
+    private static void EmpleadosPorDepartamento(ModelFactory modelFactory){
+        String codigo= JOptionPane.showInputDialog("Ingrese el codigo del departamento");
+        String resultado= modelFactory.EmpleadosPorDepartamentos(codigo);
         JOptionPane.showInputDialog(resultado);
     }
 

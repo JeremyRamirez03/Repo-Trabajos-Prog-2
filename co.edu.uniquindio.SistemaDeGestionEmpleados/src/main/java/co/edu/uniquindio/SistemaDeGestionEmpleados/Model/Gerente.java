@@ -19,7 +19,7 @@ public class Gerente extends Empleado implements Contribucion {
 
     @Override
     public String toString() {
-        return  super.toString() + "rol= " + rolEmpleado;
+        return  super.toString() + ", rol= " + rolEmpleado;
     }
 
     @Override

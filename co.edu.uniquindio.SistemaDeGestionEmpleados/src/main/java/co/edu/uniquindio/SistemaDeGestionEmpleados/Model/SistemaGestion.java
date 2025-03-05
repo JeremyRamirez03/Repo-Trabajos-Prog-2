@@ -212,8 +212,13 @@ public class SistemaGestion {
                 if (p==null){
                     mensaje+="Departamento ó Proyecto no encontrado";
                 }else {
-                    p.getListaEmpleadosAsignados().add(e);
-                    mensaje+="Empleado asignado a proyecto";
+                    if (e instanceof Gerente){
+                        p.getListaDeGerente().add((Gerente)e);
+                        mensaje+="Empleado asignado a proyecto";
+                    }else {
+                        p.getListaDeTecnico().add((Tecnico) e);
+                        mensaje+="Empleado asignado a proyecto";
+                    }
                 }
             }else {
                 d.getListaDeEmpleados().add(e);
@@ -237,5 +242,28 @@ public class SistemaGestion {
             mensaje+="Aporte realizado con exito";
         }
         return mensaje;
+    }
+
+
+    public String EmpleadosPorProyecto(String codigo) {
+        Proyecto p = buscarProyecto(codigo);
+        String  numeroEmpleados= String.valueOf(p.getListaDeTecnico().size() + p.getListaDeGerente().size() );
+        return "El proyecto " + p.getNombre() + ", Tiene " + numeroEmpleados +" empleados";
+    }
+
+
+    public String listaDepartamentosEnProyecto(String codigo) {
+        Proyecto p = buscarProyecto(codigo);
+        String departamentosLigados= "Lista de departamentos involucrados: "+ "\n";
+        for (Departamento d : p.getListaDeDepartamentos()){
+            departamentosLigados+="Departamento de " + d.getNombre() + "\n";
+        }
+        return departamentosLigados;
+    }
+
+    public String EmpleadosPorDepartamentos(String codigo) {
+        Departamento departamento = buscarDepartamento(codigo);
+        String  numeroEmpleados= String.valueOf(departamento.getListaDeEmpleados().size());
+        return "El Departamento de " + departamento.getNombre() + ", Tiene " + numeroEmpleados +" empleados asignados";
     }
 }
