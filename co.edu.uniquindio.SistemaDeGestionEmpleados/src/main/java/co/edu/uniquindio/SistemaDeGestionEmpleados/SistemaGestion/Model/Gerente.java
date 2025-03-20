@@ -1,6 +1,6 @@
-package co.edu.uniquindio.SistemaDeGestionEmpleados.Model;
+package co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Model;
 
-import co.edu.uniquindio.SistemaDeGestionEmpleados.Service.Contribucion;
+import co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Service.Contribucion;
 
 import javax.swing.*;
 

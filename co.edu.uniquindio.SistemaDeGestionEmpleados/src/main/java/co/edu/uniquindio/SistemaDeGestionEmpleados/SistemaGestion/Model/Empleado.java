@@ -1,4 +1,4 @@
-package co.edu.uniquindio.SistemaDeGestionEmpleados.Model;
+package co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Model;
 
 public class Empleado  {
     private String nombre;

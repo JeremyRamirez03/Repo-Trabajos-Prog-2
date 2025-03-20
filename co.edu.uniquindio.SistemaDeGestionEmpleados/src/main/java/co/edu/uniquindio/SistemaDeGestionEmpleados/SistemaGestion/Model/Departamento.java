@@ -1,4 +1,4 @@
-package co.edu.uniquindio.SistemaDeGestionEmpleados.Model;
+package co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Model;
 
 import java.util.ArrayList;
 import java.util.List;

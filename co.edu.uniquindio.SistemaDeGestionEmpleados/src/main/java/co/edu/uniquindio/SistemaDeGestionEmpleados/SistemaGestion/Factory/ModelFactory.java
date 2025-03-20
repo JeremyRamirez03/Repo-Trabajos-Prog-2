@@ -1,6 +1,6 @@
-package co.edu.uniquindio.SistemaDeGestionEmpleados.Factory;
+package co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Factory;
 
-import co.edu.uniquindio.SistemaDeGestionEmpleados.Model.*;
+import co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Model.*;
 
 public class ModelFactory {
     private static ModelFactory instancia;

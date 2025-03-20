@@ -1,7 +1,7 @@
-package co.edu.uniquindio.SistemaDeGestionEmpleados;
+package co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion;
 
-import co.edu.uniquindio.SistemaDeGestionEmpleados.Factory.ModelFactory;
-import co.edu.uniquindio.SistemaDeGestionEmpleados.Model.SistemaGestion;
+import co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Factory.ModelFactory;
+import co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Model.SistemaGestion;
 
 import javax.swing.*;
 

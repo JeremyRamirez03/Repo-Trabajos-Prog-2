@@ -1,9 +1,7 @@
-package co.edu.uniquindio.SistemaDeGestionEmpleados.Model;
+package co.edu.uniquindio.SistemaDeGestionEmpleados.SistemaGestion.Model;
 
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Proyecto {
